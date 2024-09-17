@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="baguio_db" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MORPHEUS;Initial Catalog=baguio_db;Integrated Security=True" SettingsObjectName="Information.Properties.Settings" SettingsPropertyName="baguio_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.student_info" Member="student_infos">
+    <Type Name="student_info">
+      <Column Name="auto_tbl_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="stud_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stud_lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stud_fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stud_midnit" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.info_save" Method="info_save">
+    <Parameter Name="stud_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="stud_lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stud_fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stud_midinit" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.info_search" Method="info_search">
+    <Parameter Name="key" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="info_searchResult">
+      <Column Name="stud_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stud_lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stud_fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stud_midnit" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.info_update" Method="info_update">
+    <Parameter Name="stud_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="stud_lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stud_fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="stud_midnit" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.info_view" Method="info_view">
+    <ElementType Name="info_viewResult">
+      <Column Name="stud_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stud_lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stud_fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stud_midnit" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.info_delete" Method="info_delete">
+    <Parameter Name="stud_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
