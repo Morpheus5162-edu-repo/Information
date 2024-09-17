@@ -12,7 +12,7 @@ namespace Information
 {
     public partial class Form1 : Form
     {
-        int stud_id;
+        int auto_tbl_id;
         DataClasses1DataContext db = new DataClasses1DataContext();
         public Form1()
         {
@@ -32,7 +32,7 @@ namespace Information
         private void save_btn_Click(object sender, EventArgs e)
         {
             db.info_save(int.Parse(stud_id_txtbox.Text), stud_lname_txtbox.Text,
-                stud_fname_txtbox.Text, char.Parse(stud_midinit_txtbox.Text), stud_contact_no_txtbox.Text);
+                stud_fname_txtbox.Text, char.Parse(stud_midinit_txtbox.Text.Substring(0, 1)), stud_contact_no_txtbox.Text);
             MessageBox.Show("Successfully Save", "Save", MessageBoxButtons.OK);
             dataGridView1.DataSource = db.info_view();
             clear_textbox();
@@ -40,8 +40,8 @@ namespace Information
 
         private void update_btn_Click(object sender, EventArgs e)
         {
-            db.info_update(int.Parse(stud_id_txtbox.Text), stud_lname_txtbox.Text,
-                stud_fname_txtbox.Text, char.Parse(stud_midinit_txtbox.Text), stud_contact_no_txtbox.Text);
+            db.info_update(auto_tbl_id, int.Parse(stud_id_txtbox.Text), stud_lname_txtbox.Text,
+                stud_fname_txtbox.Text, char.Parse(stud_midinit_txtbox.Text.Substring(0,1)), stud_contact_no_txtbox.Text);
             MessageBox.Show("Successfully Updated", "Update", MessageBoxButtons.OK);
             dataGridView1.DataSource = db.info_view();
             clear_textbox();
@@ -49,7 +49,7 @@ namespace Information
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            db.info_delete(int.Parse(stud_id_txtbox.Text));
+            db.info_delete(auto_tbl_id);
             MessageBox.Show("Successfully Deleted", "Delete", MessageBoxButtons.OK);
             dataGridView1.DataSource = db.info_view();
             clear_textbox();
@@ -67,6 +67,7 @@ namespace Information
             stud_fname_txtbox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             stud_midinit_txtbox.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             stud_contact_no_txtbox.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            auto_tbl_id = int.Parse(dataGridView1.CurrentRow.Cells[5].Value.ToString());
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -163,7 +163,7 @@ namespace Information
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(220, 36);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 366);
+            this.dataGridView1.Size = new System.Drawing.Size(539, 366);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -188,7 +188,7 @@ namespace Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 411);
+            this.ClientSize = new System.Drawing.Size(766, 411);
             this.Controls.Add(this.search_bar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);

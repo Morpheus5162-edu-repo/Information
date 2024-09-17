@@ -88,9 +88,16 @@ namespace Information
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.info_update")]
-		public int info_update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stud_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> stud_midnit, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(13)")] string stud_contact_no)
+		public int info_update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> auto_tbl_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stud_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> stud_midnit, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(13)")] string stud_contact_no)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), stud_id, stud_lname, stud_fname, stud_midnit, stud_contact_no);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), auto_tbl_id, stud_id, stud_lname, stud_fname, stud_midnit, stud_contact_no);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.info_delete")]
+		public int info_delete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> auto_tbl_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), auto_tbl_id);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -99,13 +106,6 @@ namespace Information
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<info_viewResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.info_delete")]
-		public int info_delete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stud_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), stud_id);
-			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -402,6 +402,8 @@ namespace Information
 		
 		private string _stud_contact_no;
 		
+		private int _auto_tbl_id;
+		
 		public info_viewResult()
 		{
 		}
@@ -482,6 +484,22 @@ namespace Information
 				if ((this._stud_contact_no != value))
 				{
 					this._stud_contact_no = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_auto_tbl_id", DbType="Int NOT NULL")]
+		public int auto_tbl_id
+		{
+			get
+			{
+				return this._auto_tbl_id;
+			}
+			set
+			{
+				if ((this._auto_tbl_id != value))
+				{
+					this._auto_tbl_id = value;
 				}
 			}
 		}

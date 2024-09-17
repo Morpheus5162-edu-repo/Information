@@ -29,11 +29,16 @@
     </ElementType>
   </Function>
   <Function Name="dbo.info_update" Method="info_update">
+    <Parameter Name="auto_tbl_id" Type="System.Int32" DbType="Int" />
     <Parameter Name="stud_id" Type="System.Int32" DbType="Int" />
     <Parameter Name="stud_lname" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="stud_fname" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="stud_midnit" Type="System.Char" DbType="Char(1)" />
     <Parameter Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.info_delete" Method="info_delete">
+    <Parameter Name="auto_tbl_id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.info_view" Method="info_view">
@@ -43,10 +48,7 @@
       <Column Name="stud_fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="stud_midnit" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Column Name="stud_contact_no" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="auto_tbl_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.info_delete" Method="info_delete">
-    <Parameter Name="stud_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
 </Database>
