@@ -36,7 +36,7 @@ namespace Information
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::Information.Properties.Settings.Default.baguio_dbConnectionString, mappingSource)
+				base(global::Information.Properties.Settings.Default.baguio_dbConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -73,6 +73,13 @@ namespace Information
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.info_delete")]
+		public int info_delete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> auto_tbl_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), auto_tbl_id);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.info_save")]
 		public int info_save([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stud_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> stud_midinit, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(13)")] string stud_contact_no)
 		{
@@ -91,13 +98,6 @@ namespace Information
 		public int info_update([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> auto_tbl_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> stud_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string stud_fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> stud_midnit, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(13)")] string stud_contact_no)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), auto_tbl_id, stud_id, stud_lname, stud_fname, stud_midnit, stud_contact_no);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.info_delete")]
-		public int info_delete([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> auto_tbl_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), auto_tbl_id);
 			return ((int)(result.ReturnValue));
 		}
 		
