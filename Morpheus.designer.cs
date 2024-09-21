@@ -36,7 +36,7 @@ namespace Information
     #endregion
 		
 		public DataClasses1DataContext() : 
-				base(global::Information.Properties.Settings.Default.baguio_dbConnectionString1, mappingSource)
+				base(global::Information.Properties.Settings.Default.baguio_dbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

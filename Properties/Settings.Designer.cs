@@ -36,7 +36,7 @@ namespace Information.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Morpheus5162;Initial Catalog=baguio_db;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MORPHEUS;Initial Catalog=baguio_db;Integrated Security=True")]
         public string baguio_dbConnectionString1 {
             get {
                 return ((string)(this["baguio_dbConnectionString1"]));
